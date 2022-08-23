@@ -6,27 +6,16 @@ describe('Match Stick Game', () => {
     expect(playMatchSticks(3)).to.be.true
   })
 
-  it('wins a game with 4 matches', () => {
-    expect(playMatchSticks(4)).to.be.true
-  })
 
-  it('loses a game with 5 matches', () => {
-    expect(playMatchSticks(5)).to.be.false
-  })
+  for (let index = 4; index <= 100; index+=2) {
+    it(`wins a game with ${index} matches`, () => {
+        expect(playMatchSticks(index)).to.be.true
+    })
+  }
 
-  it('wins a game with 6 matches', () => {
-    expect(playMatchSticks(6)).to.be.true
-  })
-
-  it('loses a game with 7 matches', () => {
-    expect(playMatchSticks(7)).to.be.false
-  })
-
-  it('wins a game with 8 matches', () => {
-    expect(playMatchSticks(8)).to.be.true
-  })
-
-  it('loses a game with 9 matches', () => {
-    expect(playMatchSticks(9)).to.be.false
-  })
+  for (let index = 5; index <= 101; index+=2) {
+    it(`loses a game with ${index} matches`, () => {
+        expect(playMatchSticks(index)).to.be.false
+    })
+  }
 })
